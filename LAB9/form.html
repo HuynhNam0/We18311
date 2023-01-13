@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FPT Polytechnic</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      justify-content: center;
+      display: flex;
+      height: 100vh;
+      min-height: 100%;
+    }
+    .container {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      top: 100px;
+      border: 2px solid black;
+      padding: 20px;
+    }
+    .container .Password,
+    .container .User {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    .container .Password {
+      padding-top: 5px;
+    }
+    .container .checkbox {
+      font-size: 20px;
+      padding: 3px 0 10px 5px;
+      font-weight: 500;
+    }
+    .container .text-checkbox {
+      border-radius: 5px;
+      background-color: red;
+      padding: 10px;
+    }
+     .container .button {
+      padding-top:10px;
+     }
+     .container .button .Login {
+      padding: 3px;
+      width: 70px;
+      font-size: 20px;
+     }
+  </style>
+  <body>
+    <div class="container">
+      <div class="User">
+        <label>User Name:</label>
+        <input type="text" placeholder="User Name...." />
+      </div>
+      <div class="Password">
+        <label>Password:</label>
+        <input type="password" placeholder="Password...." />
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" class="text-checkbox" />
+        <label>Remember me?</label>
+      </div>
+        <hr />
+        <div class="button">
+          <input type="submit" value="Login" class="Login">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

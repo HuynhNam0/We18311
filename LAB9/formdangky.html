@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FPT Polytechnic</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      justify-content: center;
+      display: flex;
+      height: 100vh;
+      min-height: 100%;
+      top:100px;
+    }
+    #container {
+      position: relative;
+      width: 450px;
+      height: 500px;
+      top: 100px;
+      border: 2px solid black;
+      padding: 20px;
+      font-size: 20px;
+      font-weight:bold;
+      font-variant: small-caps;
+    }
+    #container .User {
+      
+    }
+    #container .text-User input {
+      width: 200px;
+      height: 30px;
+    }
+    #container .nav{
+      padding: 10px 0;
+    }
+    #container .nav label {
+      padding:5px 0;
+    }
+    #container .right .sub-right {
+      padding-top: 20px;
+    }
+    #container .right select {
+       width: 300px;
+      height: 28px;
+      padding: 5px;
+    }
+
+  </style>
+  <body>
+    <div id="container">
+      <div class="User">
+        <label>Họ và Tên:</label>
+        <div class="text-User">
+        <input type="text" placeholder="Họ và tên...." />
+        </div>
+      </div>
+      <div class="nav">
+          <label>Giới tính:</label>
+          <label><input type="radio" class="sub-nav">Nam</label>
+          <label><input type="radio" class="sub-nav">Nữ</label>
+      </div>
+      <div class="file">
+        <form method="post" enctype="mulitpart/form-data">
+          <div class="sub-file">
+           <label>Hình ảnh:</label>
+          </div>
+           <input type="file" multiple>
+        </form>
+      </div>
+      <div class="right">
+        <div class="sub-right">
+          <label>Quốc tịch:</label>
+        </div>
+        <select>
+          <option>United States</option>
+          <option>Tiếng việt</option>
+          <option>English</option>
+        </select>
+      </div>
+      <div class="left">
+         <label>Sở thích:</label>
+         <div>
+           <label><input type="checkbox">Thể thao</label>
+           <label><input type="checkbox">Du lịch</label>
+           <label><input type="checkbox">Âm nhạc</label>
+           <label><input type="checkbox">Ẩm thực</label>
+         </div>
+      </div>
+      <div class="top">
+        <label>Ghi chú:</label><br>
+         <textarea rows="3" cols="5"></textarea>
+      </div>
+        <hr />
+        <div class="button">
+          <a href="http://127.0.0.1:5500/LAB9/form.html"><input  type="submit" value="Đăng ký" class="Login"></a>
+          <input type="submit" value="Nhập lại" class="Login">
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
