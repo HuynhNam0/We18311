@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="" type="text/css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>So sánh Float và Flexbox</h1>
+      <div class="right">
+        <h2>Float là gì</h2>
+        <p>
+          là một thuộc tính định vị CSS. Để hiểu được mục đích và nguồn gốc của
+          nó, chúng ta có thể xem xét thiết kế in ấn. Trong bố cục in, hình ảnh
+          có thể được đặt vào trang sao cho văn bản bao quanh chúng khi cần
+          thiết.
+        </p>
+        <h2>Có 4 thuộc tính Float</h2>
+        <p>left: đẩy phần tử sang bên trái</p>
+        <p>right: đẩy phần tử sang bên phải</p>
+        <p>none: không thiết lập thuộc tính float (mặc định)</p>
+        <p>inherit: kế thừa giá trị thuộc tính float của phần tử chứa nó</p>
+        <h2>Cách sử dụng Float</h2>
+        <p>
+          Nó sẽ được bắt đầu ở hàng phía trên , nếu hàng phía trên còn đủ chỗ
+          trống để chứa nó.
+        </p>
+        <p>
+          Nó sẽ được bắt đầu ở hàng mới, nếu hàng phía trên không đủ chỗ trống
+          để chứa nó
+        </p>
+        <p>
+          Lưu ý: Nếu một phần tử được thiết lập thuộc tính float mà trong khi
+          phần tử đứng trước nó không được thiết lập thuộc tính float, thì mặc
+          định nó được bắt đầu ở hàng mới
+        </p>
+        <p>
+          Khi trên một hàng có nhiều phần tử được thiết lập thuộc tính float và
+          mỗi phần tử có chiều cao khác nhau, nếu hàng không đủ chỗ chứa phần tử
+          thì phần tử sẽ bắt đầu bên cạnh phần tử có chiều cao thấp nhất và còn
+          đủ khoảng trống để chứa nó
+        </p>
+        <h2>
+          Khi sử dụng Float thì phải dùng Clear để tắt Float, bao
+          gồm:Both,None,Left,right,Inherit.
+        </h2>
+      </div>
+      <div class="top">
+        <h2>Flexbox là gì</h2>
+        <p>
+          Flexbox là phương pháp bố cục một chiều để sắp xếp các mục theo hàng
+          hoặc cột. Các mục uốn cong (mở rộng) để lấp đầy không gian bổ sung
+          hoặc thu nhỏ để vừa với không gian nhỏ hơn. Bài viết này giải thích
+          tất cả các nguyên tắc cơ bản.
+        </p>
+        <h2>Cách sử dụng của Flexbox</h2>
+        <p>
+          Định tâm theo chiều dọc một khối nội dung bên trong phần tử gốc của
+          nó.
+        </p>
+        <p>
+          Làm cho tất cả các phần tử con của vùng chứa chiếm một lượng chiều
+          rộng/chiều cao khả dụng bằng nhau, bất kể chiều rộng/chiều cao khả
+          dụng là bao nhiêu.
+        </p>
+        <p>
+          Làm cho tất cả các cột trong bố cục nhiều cột có cùng chiều cao ngay
+          cả khi chúng chứa lượng nội dung khác nhau.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

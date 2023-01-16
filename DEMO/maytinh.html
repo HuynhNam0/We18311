@@ -1,8 +1,11 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>NAm</title>
-    <meta charset="utf-8" />
+    <title>Huynh Nam</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="mains.css" />
+    <meta http-equiv="X-UA-Compattible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scal" />
   </head>
   <style>
     * {
@@ -14,35 +17,105 @@
     body {
       justify-content: center;
       display: flex;
-      text-align: center;
-      background-color: #ff99ff;
       min-height: 100%;
-      width: 100%;
+      height: 100%;
+      background: black;
     }
     .container {
-      position: relative;
-      top: 200px;
-      width: 25%;
-      margin: 10px;
-      text-align: center;
+      font-size: 75px;
+      height: 100%;
+      width: 100%;
+      font-family: "Times New Roman", Times, serif;
     }
-    .container button {
+    #steps .step {
+      font-size: 110px;
+      padding-left: 300px;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    .nav {
+      width: 400px;
+    }
+    .nav .subnav,
+    .nav .content,
+    .nav .number,
+    .nav .back {
+      font-size: 25px;
+      height: 80px;
+      width: 80px;
       border-radius: 100%;
-      width: 100px;
-      height: 100px;
+    }
+    .nav .content {
+      background-color: orange;
+      color: #fff;
+      font-size: 30px;
+    }
+    .nav .content:hover {
+      background-color: #eee9e9;
+      color: #fff;
+      font-size: 30px;
+    }
+    .subnav {
+      background-color: #d1c8c8;
+    }
+    .subnav:hover {
+      background-color: #eee9e9;
+    }
+    .nav .number,
+    .nav .back,
+    .nav .front {
+      background-color: #2e2927;
+      color: #fff;
+      font-size: 30px;
+    }
+    .nav .number:hover,
+    .nav .back:hover,
+    .nav .front:hover {
+      background-color: #eee9e9;
+      color: #fff;
+      font-size: 30px;
+    }
+    .back {
+      font-family: system-ui;
+    }
+
+    .front {
+      padding-right: 100px;
+      width: 180px;
+      height: 80px;
+      border-top-left-radius: 50px;
+      border-bottom-left-radius: 50px;
+      border-bottom-right-radius: 50px;
+      border-top-right-radius: 50px;
     }
   </style>
   <body>
     <div class="container">
-      <button>1</button>
-      <button>2</button>
-      <button>3</button>
-      <button>4</button>
-      <button>5</button>
-      <button>6</button>
-      <button>7</button>
-      <button>8</button>
-      <button>9</button>
+      <div id="steps">
+        <div class="step">0</div>
+      </div>
+      <div class="nav">
+        <button class="subnav top">AC</button>
+        <button class="subnav bottom">+/-</button>
+        <button class="subnav left">%</button>
+        <button class="content top">÷</button>
+        <button class="number">7</button>
+        <button class="number">8</button>
+        <button class="number">9</button>
+        <button class="content bottom">x</button>
+        <button class="number">4</button>
+        <button class="number">5</button>
+        <button class="number">6</button>
+        <button class="content right">-</button>
+        <button class="number">1</button>
+        <button class="number">2</button>
+        <button class="number">3</button>
+        <button class="content left">+</button>
+        <button class="front">0</button>
+        <button class="back">,</button>
+        <button class="content up">=</button>
+      </div>
     </div>
   </body>
 </html>

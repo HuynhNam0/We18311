@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>FPT Polytechnic</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="" type="text/css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    body {
+      justify-content: center;
+      display: flex;
+      height: 100vh;
+      min-height: 100%;
+      font-variant: small-caps;
+    }
+    .container {
+      position: relative;
+      width: 400px;
+      height: 300px;
+      top: 100px;
+      border: 2px solid black;
+      padding: 20px;
+      padding-right: 30px;
+    }
+    .container .User {
+      font-size: 17px;
+      font-weight: bold;
+    }
+    .container .text,
+    .container .password {
+      padding-top: 10px;
+      font-weight: bold;
+      padding-bottom: 2px;
+      font-size: 17px;
+    }
+    .container .User input,
+    .container .password input {
+      width: 348px;
+      border-radius: 5px;
+      height: 30px;
+      padding: 5px;
+    }
+    .container .text .list {
+      border-radius: 5px;
+      background-color: yellow;
+      border: 1px solid red;
+    }
+    .container .text {
+      padding-bottom: 10px;
+    }
+    .container .button {
+      padding-top: 10px;
+    }
+
+    .container .button input {
+      padding: 8px 30px;
+      border: 0;
+      outline: none;
+      font-weight: bold;
+      border-radius: 20px;
+      background-color: white;
+      color: orangered;
+      box-shadow: inset 0 0 20px blue;
+    }
+    .container .button .Login:hover {
+      color: blue;
+      box-shadow: inset 0 0 20px orangered;
+    }
+    .container .button .sub:disabled {
+      color: darkgray;
+      box-shadow: inset 0 0 20px gray;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="User">
+        <label>Họ và tên:</label>
+        <input type="text" />
+      </div>
+      <div class="password">
+        <label>Quốc tịch:</label>
+        <input type="text" value="Việt Nam" />
+      </div>
+      <div class="text">
+        <label for="list">Ghi chú:</label><br />
+        <textarea class="list" name="list" rows="4" cols="45"> </textarea>
+      </div>
+      <hr />
+      <div class="button">
+        <input type="submit" value="Thêm" class="Login" />
+        <input type="submit" value="Sửa" class="Login" />
+        <input type="submit" value="Xoá" class="sub" disabled />
+      </div>
+    </div>
+  </body>
+</html>

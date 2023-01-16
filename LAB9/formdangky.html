@@ -30,36 +30,62 @@
       font-size: 20px;
       font-weight:bold;
       font-variant: small-caps;
-    }
-    #container .User {
-      
+      padding-right: 25px;
     }
     #container .text-User input {
-      width: 200px;
+      width: 400px;
       height: 30px;
     }
     #container .nav{
       padding: 10px 0;
     }
     #container .nav label {
-      padding:5px 0;
+      padding:10px 0;
+      padding-right: 5px;
+    }
+     #container .nav input,
+      #container .left input{
+        width: 10px;
+      }
+    #container .file input {
+      padding-left: 5px;
     }
     #container .right .sub-right {
-      padding-top: 20px;
+      padding-top: 10px;
     }
     #container .right select {
-       width: 300px;
+      width: 400px;
       height: 28px;
-      padding: 5px;
+      border-radius: 2px;
+      padding-left: 5px;
     }
-
+    #container .left {
+      padding-top:10px;
+    }
+    #container .left .sub-left {
+      font-size: 15px;
+      padding: 0 0 10px 5px;
+    }
+    #container .left label {
+      padding-right: 5px;
+    }
+    #container .button {
+      padding-top: 10px;
+    }
+    #container .button input{
+      height: 20px;
+      width: 65px;
+    }
+    #container .top {
+      padding-bottom: 10px;
+    }
   </style>
   <body>
     <div id="container">
       <div class="User">
-        <label>Họ và Tên:</label>
+        <label>Họ và tên:</label>
         <div class="text-User">
-        <input type="text" placeholder="Họ và tên...." />
+        <input type="text"  />
         </div>
       </div>
       <div class="nav">
@@ -87,7 +113,7 @@
       </div>
       <div class="left">
          <label>Sở thích:</label>
-         <div>
+         <div class="sub-left">
            <label><input type="checkbox">Thể thao</label>
            <label><input type="checkbox">Du lịch</label>
            <label><input type="checkbox">Âm nhạc</label>
@@ -95,12 +121,14 @@
          </div>
       </div>
       <div class="top">
-        <label>Ghi chú:</label><br>
-         <textarea rows="3" cols="5"></textarea>
+        <label for="list">Ghi chú:</label><br>
+         <textarea id="list" name= 
+         "list" rows="4" cols="52">
+         </textarea>
       </div>
         <hr />
         <div class="button">
-          <a href="http://127.0.0.1:5500/LAB9/form.html"><input  type="submit" value="Đăng ký" class="Login"></a>
+          <a href="http://127.0.0.1:5500/We18311/LAB9/form.html"><input  type="submit" value="Đăng ký" class="Login"></a>
           <input type="submit" value="Nhập lại" class="Login">
         </div>
       </div>
