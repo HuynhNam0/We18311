@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html id="box">
+  <head>
+    <title>DỰ ÁN 1</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="box.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fontawesome.com/icons/chevron-down?s=solid&f=sharp"
+    />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      justify-content: center;
+      text-align: center;
+      display: flex;
+      min-height: 100%;
+      height: 100%;
+      font-family: Arial, Helvetica, sans-serif;
+      clear: both;
+    }
+    .nav {
+      position: fixed;
+      background-color: #000;
+      border: 1px solid #e7e7e7;
+      height: 56px;
+      padding: 0 20px 0 20px;
+      display: flex;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1;
+    }
+
+    .subnav {
+      position: absolute;
+      color: #fff;
+      right: 70%;
+      animation: bar 5s linear infinite;
+      bottom: 17px;
+    }
+    @keyframes bar {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        border-bottom: 1px solid #fff;
+      }
+    }
+    .sub-search {
+      position: absolute;
+      color: #fff;
+      right: 0;
+      bottom: 0;
+      padding: 18px 15px 18px 0;
+    }
+    #header {
+      position: fixed;
+      top: 56px;
+      font-size: 15px;
+      right: 0;
+      border: 1px solid #e7e7e7;
+      left: -150px;
+      background-color: #fff;
+      color: #000;
+      z-index: 2;
+    }
+    #text-header {
+      display: inline-block;
+    }
+    #text-header > li {
+      display: inline-block;
+    }
+    #text-header li {
+      position: relative;
+      list-style-type: none;
+    }
+    #text-header .text-subheader {
+      position: absolute;
+      display: none;
+      top: 100%;
+      left:0;
+      font-weight: 300;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }  
+     #text-header .text-subnavheader .text-navheader {
+      position: absolute;
+      left: 100%;
+      top:0;
+      display: none;
+      font-weight: 300;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    #text-header .sub {
+      position: absolute;
+      width: 1200px;
+      padding: 20px 38px 38px;
+      column-width: 50px;
+      column-count: 3;
+    }
+    
+    #text-header li .text-subheader a {
+      display: flex;
+      font-weight: 300;
+      border-bottom: 1px solid #7e7e7e;
+      padding-inline: unset;
+      min-width: 250px;
+      padding: 0 24px;
+    }
+    
+    #text-header li .sub a {
+      text-transform: uppercase;
+    }
+    #text-header li:hover .text-subheader a:hover {
+      font-weight: 600;
+      border-bottom: 1px solid red;
+    }
+    #text-header li:hover .text-subnavheader li:hover .text-navheader,
+    #text-header li:hover .text-subheader {
+      display: block;
+    }
+    #text-header li .text-subnavheader li .text-navheader a,
+    #text-header.text-subheader a {
+      color: #000;
+      padding: 0 12px;
+      line-height: 46px;
+    }
+    #text-header.text-subheader > li:hover {
+      color: #000;
+      background-color:#fff ;
+    }
+    #text-header > li > a {
+      color: #000;
+      font-weight: 600;
+    }
+    #text-header li a {
+      text-decoration: none;
+      line-height: 38px;
+      padding: 0 24px;
+      color: #000;
+      display: block;
+    }
+    #text-header > li:hover > a,
+    #text-header .text-subheader li:hover a {
+      color: #000;
+      background-color: #fff;
+      border-bottom: 3px solid red;
+    }
+    .fe {
+      position: absolute;
+      opacity: 0.7;
+      padding: 10px;
+      font-size: 10px;
+      top: 3px;
+    }
+    #slider {
+      position: relative;
+      margin-top: 126px;
+      margin-right: 400px;
+    }
+    img {
+      width: 800px;
+      height: 400px;
+    }
+
+    #slider .heading {
+      position: absolute;
+      bottom: 0;
+      left: 40px;
+      width: 100%;
+      min-height: 100%;
+      text-align: center;
+      color: #fff;
+      letter-spacing: 0.2px;
+    }
+    .heading h1 {
+      position: absolute;
+      font-size: 12px;
+      line-height: 30px;
+      background-color: #e54e53;
+      padding: 0 14px;
+      margin-left: 20px;
+    }
+    .heading h1:hover {
+      position: absolute;
+      font-size: 12px;
+      text-decoration: underline;
+      line-height: 30px;
+      background-color: #e54e53;
+      padding: 0 14px;
+      margin-left: 20px;
+    }
+    .heading p {
+      position: absolute;
+      bottom: 60px;
+      margin: 15px 20px;
+      opacity: 0.5;
+      font-size: 12px;
+    }
+    .heading div {
+      position: absolute;
+      padding: 15px 20px;
+      bottom: 10px;
+      font-size: 17px;
+    }
+    .heading:hover div {
+      position: absolute;
+      bottom: 10px;
+      padding: 15px 20px;
+      font-size: 17px;
+      text-decoration: underline;
+    }
+    #content {
+      position: relative;
+      width: 800px;
+      font-size: 14px;
+    }
+    h3 {
+      padding: 32px 0 22px 0;
+      font-size: 20px;
+    }
+    p {
+      padding: 10px;
+      text-align: justify;
+    }
+    .text-member {
+      position: relative;
+      margin-top: 48px;
+      text-align: center;
+      background-color: #000;
+      color: #fff;
+      padding: 20px 0 0;
+    }
+    #members-list .text-member p {
+      padding: 20px;
+      text-align: center;
+      animation: 5s member linear infinite;
+    }
+    @keyframes member {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    #members-list .text-member h4 {
+      font-style: unset;
+      letter-spacing: 4px;
+    }
+    .member-items {
+      display: inline-block;
+      width: 19%;
+      border: 2px solid #000;
+      margin: 0 30px 0;
+    }
+    h5 {
+      text-align: left;
+      padding: 20px 0 10px;
+      font-size: 20px;
+      font-weight: 600;
+    }
+    .member-name {
+      font-size: 15px;
+      text-align: center;
+    }
+    .member-img {
+      width: 125px;
+      height: 175px;
+    }
+    .subfooter {
+      position: relative;
+      margin-top: 340px;
+      background-color: #7e7e;
+    }
+    .min-footer {
+      font-size: 48px;
+      font-weight: bold;
+      letter-spacing: 0, 02em;
+      padding: 30px 0 60px;
+      border-bottom: 2px solid #000;
+      text-align: left;
+    }
+    .text-subfooter {
+      border-bottom: 1px solid #000;
+      padding: 50px 40px 20px 80px;
+    }
+    .subfooter .text-subfooter h6 {
+      width: 449px;
+      height: 270px;
+      font-size: 20px;
+      line-height: 1.7em;
+      font-family: open sans, sans-serif;
+    }
+    .subfooter .text-subfooter p {
+      text-align: left;
+      width: 449px;
+      font-size: 16px;
+      float: right;
+      line-height: 1.7em;
+      font-family: open sans, sans-serif;
+    }
+    .subfooter .text-subfooter .four,
+    .subfooter .text-subfooter .one {
+      height:270px;
+    }
+    .subfooter .text-subfooter .two {
+      height:215px;
+    }
+    .subfooter .text-subfooter .five,
+    .subfooter .text-subfooter .three {
+      height:160px
+    }
+    .subfooter .text-subfooter .six {
+      height:180px;
+    }
+    .subfooter .text-subfooter .seven {
+      height:100px;
+    }
+    .subfooter .text-subfooter .eight {
+      height:150px;
+    }
+    .subfooter .text-subfooter .nine {
+      font-size:16px;
+      font-weight: 400;
+      font-style: normal;
+      font-family: open sans,sans-serif;
+      line-height: 1.4em;
+    }
+    .subfooter .text-subfooter .ten {
+      font-weight: bold;
+    }
+    .max-subfooter {
+      padding:40px 0;
+      font-size:16px;
+      font-weight: 400;
+      border-bottom:1px solid #000 ;
+    }
+    .ten {
+      font-weight: 700;
+    }
+  </style>
+
+  <body>
+    <div class="clear"></div>
+    <div id="container">
+      <div class="nav">
+        <div class="subnav">Triệu chứng đau bụng buồn nôn khó thở là gì?</div>
+        <div class="sub-search">
+          <input placeholder="search..." value="search..." />
+          <i class="fa fa-search"></i>
+        </div>
+      </div>
+      <div id="header">
+        <ul id="text-header">
+          <li><a href="">Trang chủ</a></li>
+          <li><a href="">Giới thiệu</a></li>
+          <li>
+            <a href="">Bệnh thường gặp <i class="fe fa fa-chevron-down"></i></a>
+            <ul class="sub text-subheader">
+              <li><a href="">Bệnh cơ-Xương khớp</a></li>
+              <li><a href="">Bệnh dạ dày</a></li>
+              <li><a href="">Đột quỵ</a></li>
+              <li><a href="">Bệnh mắt</a></li>
+              <li><a href="">Bệnh tim mạch</a></li>
+              <li><a href="">Sốt xuất huyết</a></li>
+              <li><a href="">Bệnh tai-mũi-họng</a></li>
+              <li><a href="">Béo phì</a></li>
+              <li><a href="">Viêm gan B</a></li>
+              <li><a href="">Bệnh tiêu hoá</a></li>
+              <li><a href="">Cao huyết áp</a></li>
+            </ul>
+          </li>
+
+          <li>
+            <a href=""
+              >Sức khoẻ và làm đẹp<i class="fe fa fa-chevron-down"></i
+            ></a>
+            <ul class="text-subheader">
+              <li><a href="">Làm đẹp</a></li>
+              <li><a href="">Mẹo hay</a></li>
+              <li><a href="">Giới tính</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">Y học<i class="fe fa fa-chevron-down"></i></a>
+            <ul class="text-subnavheader text-subheader">
+              <li><a href="">Y học cổ truyền</a>
+                <ul class="text-navheader">
+                   <li><a href="">Bài thuốc dân gian</a></li>
+                   <li><a href="">Cây thuốc hay</a></li>
+              </ul>
+            </li>
+              <li><a href="">Y học bổ sung</a></li>
+              <li><a href="">Dinh dưỡng</a></li>
+            </ul>
+          </li>
+          <li><a href="">Sự kiên y học</a></li>
+          <li>
+            <a href="">Hỏi đáp<i class="fe fa fa-chevron-down"></i></a>
+          </li>
+          <li><a href="">Liên hệ</a></li>
+        </ul>
+      </div>
+      <div id="slider">
+        <img
+          src="https://yhocvietnam.com.vn/wp-content/uploads/2020/12/thuoc-khang-sinh-yhocvietnam.jpg"
+        />
+        <div class="heading">
+          <h1>Tin nổi bật</h1>
+          <p>OCTOBER 23,2019</p>
+          <div>
+            10 Nội dung được WHO khuyến cáo liên quan đến tình trạng đề kháng
+            kháng sinh
+          </div>
+        </div>
+      </div>
+      <div id="content">
+        <div class="text-content">
+          <h3>Trang tin y học và sức khỏe uy tín</h3>
+          <p>
+            Cập nhật thông tin y học mỗi ngày. Cung cấp cho bạn đọc những thông
+            tin y học chính thống và hữu ích nhất. Đặc biệt là các lĩnh vực y
+            học cổ truyền, y học bổ sung, y học hiện đại, sức khỏe giới tính,
+            dinh dưỡng, các bệnh thường gặp, sức khỏe và làm đẹp...
+          </p>
+          <p>
+            Nền y học Việt Nam đậm đà bản sắc dân tộc và xu thế phát triển của
+            thời đại. Chủ tịch Hồ Chí Minh đã dạy “Lương y phải như từ mẫu”. Hải
+            Thượng Lãn Ông - Lê Hữu Trác cũng đã từng dạy: “Không có nghề nào
+            nhân đạo bằng nghề cứu người. Không có nghề nào vô nhân đạo bằng
+            nghề y thiếu đạo đức”. Theo Bác, “Thuốc tây chữa được nhiều bệnh,
+            nhưng cũng có bệnh chữa không được mà thuốc ta chữa được; thuốc ta
+            chữa được nhiều bệnh, nhưng cũng có bệnh chữa không được mà thuốc
+            tây chữa được... Bên nào cũng có cái ưu điểm, hai cái ưu điểm cộng
+            lại thì chữa được bệnh tốt cho đồng bào, cho nhân dân, phục vụ cho
+            xây dựng chủ nghĩa xã hội. Thầy thuốc tây phải học Đông y, thầy
+            thuốc ta cũng phải học Tây y...
+          </p>
+          <p>
+            Để xây dựng nền y học Việt Nam sánh vai với các cường quốc y học
+            trên thế giới thì một mặt chúng ta phải gìn giữ và phát huy hiệu quả
+            và thế mạnh của Y học cổ truyền dân tộc Việt Nam, mặt khác không
+            ngừng học hỏi và ứng dụng những thành tựu của nền y học hiện đại
+            trên thế giới. Đông tây y kết hợp là chiến lược phát triển ngành y
+            tế của Việt Nam trong thời đại mới. Hòa nhập với nền y học hiện đại
+            nhưng vẫn giữ được bản sắc riêng vón có nhờ phát huy thế mạnh trong
+            điều trị của y học cổ truyền Việt Nam...
+          </p>
+        </div>
+      </div>
+      <div id="members-list">
+        <div class="text-member">
+          <h4>Những loại bệnh thường gặp</h4>
+          <p>
+            Bệnh cơ-xương khớp, Bệnh dạ dày, Đột quỵ, Bệnh mắt, Bệnh tim mạch,
+            Sốt xuất huyết, Bệnh tai-mũi-họng, Béo phì, Viên gan B, Bệnh tiêu
+            hoá, Cao huyết áp
+          </p>
+        </div>
+        <h5>Các loại bệnh nguy hiểm</h5>
+        <div class="member-items">
+          <p class="member-name">Bệnh tim mạch</p>
+          <img
+            src="https://tse1.mm.bing.net/th?id=OIP.nG5Z_pQaPkzrJcVAQxkXfgHaEK&pid=Api&P=0"
+            class="member-img"
+          />
+        </div>
+        <div class="member-items">
+          <p class="member-name">Viêm gan B</p>
+          <img
+            src="https://iwthanoi.vn/wp-content/uploads/2020/04/Hinh-anh-viem-gan-B.jpg"
+            class="member-img"
+          />
+        </div>
+        <div class="member-items">
+          <p class="member-name">Béo phì</p>
+          <img
+            src="https://tse2.mm.bing.net/th?id=OIP.kG008Cp0uG89M_td4TAKFAHaHa&pid=Api&P=0"
+            class="member-img"
+          />
+        </div>
+        <div class="member-items">
+          <p class="member-name">Sốt xuất huyết</p>
+          <img
+            src="https://coinguonsusong.com/wp-content/uploads/2019/07/d%E1%BA%A5u-hi%E1%BB%87u-s%E1%BB%91t-xu%E1%BA%A5t-huy%E1%BA%BFt.jpg"
+            class="member-img"
+          />
+        </div>
+      </div>
+      <div id="footer">
+        <div class="subfooter">
+          <div class="min-footer">Câu hỏi thường gặp</div>
+          <div class="text-subfooter">
+            <p class="one">
+              Có. Wix cung cấp một số cách khác nhau để giúp bạn xây dựng trang
+              web miễn phí của riêng bạn. Vì vậy, bạn có thể chọn quy trình
+              thiết kế phù hợp nhất với mình. Bạn cần truy cập trực tuyến nhanh
+              chóng? Hãy trả lời một số câu hỏi đơn giản và Wix ADI (Trí tuệ
+              Thiết kế Nhân tạo) sẽ xây dựng một trang web chuyên nghiệp cho bạn
+              chỉ trong vòng chưa đầy 10 phút. Nếu bạn muốn tự do sáng tạo và
+              thỏa sức thiết kế, hãy bắt đầu từ con số 0, sau đó kéo và thả các
+              tính năng thiết kế trang web mà bạn cần trong Wix Editor.
+            </p>
+            <h6 class="one">1. Xây dựng một trang web có dễ không?</h6>
+          </div>
+          <div class="two text-subfooter">
+            <p class="two">
+              Chắc chắn rồi. Wix là một nền tảng thân thiện với người dùng và
+              giúp bạn có thể xây dựng một trang web chuyên nghiệp mà không cần
+              biết cách viết mã. Trong Wix Editor, bạn có thể kéo và thả bất kỳ
+              tính năng nào mà bạn muốn và tùy chỉnh nó sao cho phù hợp với giao
+              diện trang web của bạn. Tất nhiên, nếu bạn biết cách viết mã, bạn
+              có thể thêm chức năng nâng cao vào trang web của mình với Velo.
+            </p>
+            <h6 class="two">
+              2. Tôi có thể xây dựng trang web khi không biết cách viết mã
+              không?
+            </h6>
+          </div>
+          <div class="three text-subfooter">
+            <p class="three">
+              Trang web Wix của bạn tự động đi kèm với phiên bản được tối ưu hóa
+              cho thiết bị di động để mang đến giao diện đẹp hơn trên những màn
+              hình nhỏ hơn. Trình chỉnh sửa trên Thiết bị Di động của Wix sẽ
+              giúp bạn dễ dàng tùy chỉnh trang web trên thiết bị di động của
+              mình hơn nữa.
+            </p>
+            <h6 class="three">
+              3. Tôi có thể làm cho trang web của mình trở nên thân thiện với
+              thiết bị di động bằng cách nào?
+            </h6>
+          </div>
+          <div class="four text-subfooter">
+            <p class="four">
+              Bạn có thể tạo một trang web miễn phí với Wix đi kèm với tên miền
+              Wix. Để có giao diện trực tuyến chuyên nghiệp hơn ngay tức thì,
+              hãy sở hữu một tên miền tùy chỉnh. Nó sẽ tạo thêm uy tín cho
+              thương hiệu của bạn và giúp khách truy cập có thể tìm thấy bạn
+              trực tuyến. Bạn có thể bắt đầu xây dựng thương hiệu của mình bằng
+              cách sử dụng miền của mình trong một địa chỉ email tùy chỉnh
+              (info@mystunningwebsite.com), các kênh mạng xã hội, các chiến dịch
+              tiếp thị qua email, v.v.
+            </p>
+            <h6 class="four">
+              4. Tôi có thể tạo trang web miễn phí với một miền tùy chỉnh bằng
+              cách nào?
+            </h6>
+          </div>
+          <div class="five text-subfooter">
+            <p class="five">
+              Trình thiết kế trang web miễn phí của Wix rất dễ sử dụng. Bạn đang
+              tìm kiếm một dịch vụ web cụ thể? Hãy khám phá Chợ trực tuyến Wix
+              để tìm một nhà thiết kế tự do hoặc đơn vị được chứng nhận với mức
+              giá phù hợp với ngân sách của bạn.
+            </p>
+            <h6 class="five">
+              5. Tôi nên sử dụng một trình thiết kế trang web hay thuê một nhà
+              phát triển web?
+            </h6>
+          </div>
+          <div class="six text-subfooter">
+            <p class="six">
+              Khi bạn tạo một trang web miễn phí với Wix, bạn sẽ nhận được dịch
+              vụ lưu trữ trang web miễn phí đáng tin cậy, có thể mở rộng. Tất cả
+              nội dung trên trang web của bạn sẽ được lưu trữ trên các máy chủ
+              an toàn trên khắp thế giới. Vì vậy, bất kể khách truy cập của bạn
+              đang ở đâu, họ đều có thể tải nhanh trang web của bạn.
+            </p>
+            <h6 class="six">
+              6. Tôi có thể xây dựng và lưu trữ trang web miễn phí như thế nào?
+            </h6>
+          </div>
+          <div class="seven text-subfooter">
+            <p class="seven">
+              Chắc chắn rồi! Bạn có thể tạo bất kỳ loại trang web nào với Wix.
+              Khám phá các mẫu trang đích HTML đẹp mắt để bắt đầu ngay hôm nay.
+            </p>
+            <h6 class="seven">
+              7. Tôi có thể sử dụng trình thiết kế trang web để tạo trang đích
+              không?
+            </h6>
+          </div>
+          <div class="eight text-subfooter">
+            <p class="eight">
+              Wix giúp việc đưa trang web của bạn xuất hiện trên Google trở nên
+              thật đơn giản. Với Trình hướng dẫn SEO của Wix, hãy trả lời một số
+              câu hỏi về trang web, vị trí, từ khóa của bạn và nhận kế hoạch SEO
+              được cá nhân hóa để cho phép trang web của bạn có thể được tìm
+              thấy trực tuyến.
+            </p>
+            <h6 class="eight">
+              8. Trang web của tôi có thể được tìm thấy trên Google bằng cách
+              nào?
+            </h6>
+        </div>
+        <div class="max-subfooter">
+        <span class="nine">
+          Trang web này được thiết kế với
+        </span>
+        <span class="ten">Wix.</span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
