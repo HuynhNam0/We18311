@@ -1,0 +1,868 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="" type="text/css" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      height: 150%;
+      min-height: 500px;
+      background-image: linear-gradient(to bottom, #097934, rgb(212, 243, 100));
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .clear {
+      clear: both;
+    }
+    .container {
+      position: relative;
+    }
+    .container .header {
+      position: fixed;
+      height: 200px;
+      background-color: #2ce90f;
+      display: flex;
+      right: 0;
+      left: 0;
+      top: 0;
+      z-index: 1;
+    }
+    .container .header .image1 {
+      width: 30%;
+      height: 80%;
+      left: 35%;
+      bottom: 10px;
+      position: absolute;
+    }
+    .container .header .text-header .image2 {
+      width: 100px;
+      height: 100px;
+      border-radius: 100px;
+      position: absolute;
+      left: 15%;
+      margin: 10px 0;
+      top: 10%;
+    }
+    .container .header .text-header .one {
+      font-size: 20px;
+      font-style: italic;
+      left: 100px;
+      color: white;
+      position: absolute;
+      animation: ani1 5s linear infinite;
+    }
+    @keyframes ani1 {
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        text-decoration: underline;
+        font-weight: bold;
+        color: rgb(225, 14, 14);
+      }
+    }
+    .container .header .text-header .min-header {
+      color: blue;
+      text-shadow: 2px 2px 1px white;
+      font-size: 20px;
+      position: absolute;
+      left: 13%;
+      bottom: 5px;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    .container .header .text-header .min-header span {
+      font-size: 30px;
+    }
+    .container .header .sub-header {
+      display: none;
+      right: 0;
+      position: absolute;
+      top: 0;
+      width: 50%;
+      padding: 10px;
+      background-color: green;
+      color: #fff;
+    }
+    .container .header .sub-header .top {
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+    .container .header .sub-header .right {
+      display: flex;
+      padding: 5px 0;
+    }
+    .container .header .sub-header .bottom {
+      padding-right: 5px;
+    }
+    .container .header .sub-header .left {
+      padding: 10px;
+      text-decoration: underline;
+      display: inline-block;
+    }
+    .container .header .sub-header .text {
+      padding-left: 5px;
+    }
+    .container .header .sub-header button {
+      padding-left: 5px;
+    }
+    .text-nav {
+      display: inline-block;
+    }
+    .text-nav > li {
+      display: inline-block;
+    }
+
+    .container .nav {
+      display: flex;
+      position: fixed;
+      height: 50px;
+      background-color: #000;
+      right: 0;
+      left: 0;
+      top: 200px;
+      box-shadow: 0 0 10px #000;
+      z-index: 2;
+    }
+    .container .nav ul {
+      list-style-type: none;
+    }
+    .container .nav ul a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      padding: 16px;
+    }
+    .container .nav ul a:hover {
+      text-decoration: none;
+      color: rgb(225, 14, 14);
+      display: flex;
+      padding: 16px;
+      background-color: #333;
+    }
+    .container .nav ul a:active {
+      color: rgb(40, 239, 5);
+    }
+    .container .nav .text-nav .sub-nav {
+      position: absolute;
+      display: none;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .container .nav .text-nav .sub-nav a {
+      display: flex;
+      font-weight: 300;
+      border-bottom: 1px solid #7e7e7e;
+      padding-inline: unset;
+      color: #000;
+      min-width: 150px;
+      padding: 10px 20px;
+    }
+    .container .nav .text-nav .sub-nav a:hover {
+      color: #fff;
+      background-color: #000;
+      font-weight: bold;
+    }
+    .container .nav .text-nav .sub-nav a:active {
+      color: #2ce90f;
+    }
+    .container .nav .text-nav li:hover .sub-nav {
+      display: block;
+    }
+    .article {
+      position: absolute;
+      top: 250px;
+      width: 70%;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+    }
+    .article .sub-article {
+      border: 1px solid #f2f2f2;
+      margin: 5px 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    .article h1 {
+      font-size: 20px;
+      padding: 10px;
+    }
+    .article .top img {
+      width: 400px;
+      height: 200px;
+      display: flex;
+      border-radius: 10px;
+      border: 1px solid #000;
+      margin-left: 10px;
+    }
+    .article .top a {
+      text-decoration: none;
+      color: blue;
+    }
+    .text-article .bottom a:hover,
+    .article .max-article p:hover,
+    .article .top a:hover {
+      text-decoration: none;
+      color: red;
+    }
+    .article .top {
+      text-align: center;
+    }
+    .article .max-article {
+      display: flex;
+      padding: 10px 10px;
+      text-align: center;
+    }
+    .article .max-article p {
+      padding: 5px 5px;
+      color: blue;
+    }
+    .article .right img {
+      width: 87%;
+      border-radius: 5px;
+      border: 1px solid #000;
+    }
+    .article .min-article {
+      padding: 0 20px;
+      color: blue;
+    }
+    .article .min-article p {
+      padding: 5px 0;
+    }
+    .text-article {
+      padding-top: 10px;
+    }
+    .text-article .top {
+      text-transform: uppercase;
+      color: rgb(225, 14, 14);
+      font-size: 17px;
+      opacity: 0.6;
+      padding: 10px 0 10px 30px;
+      text-align: left;
+      background-color: #333;
+      margin: 5px 10px 0 10px;
+    }
+    .text-article .bottom {
+      border: 1px solid #f2f2f2;
+      background-color: rgba(255, 255, 255, 0.6);
+      margin: 0 10px;
+    }
+    .text-article .bottom .right {
+      background: #f4f4f4;
+      display: flex;
+      padding: 15px 5px 15px 10px;
+      font-size: 17px;
+      margin: 10px 10px 30px;
+    }
+    .text-article .bottom label {
+      cursor: auto;
+      padding-right: 10px;
+    }
+    .text-article .bottom select {
+      display: flex;
+      padding: 5px 10px;
+      margin-top: -4px;
+    }
+    .text-article .bottom li {
+      list-style-type: none;
+    }
+    .text-article .bottom a {
+      text-decoration: none;
+      color: #000;
+      text-align: justify;
+      display: block;
+      padding: 10px 0 20px 0;
+      border-bottom: 1px solid #7e7e7e;
+    }
+    .text-article .bottom ul {
+      padding: 0 20px 0 30px;
+    }
+    .text-article .bottom span {
+      font-size: 18px;
+      font-weight: bold;
+      color: #0399f0;
+      font-family: fantasy;
+      padding-right: 15px;
+    }
+    .aside {
+      position: absolute;
+      top: 250px;
+      width: 30%;
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      margin: 5px;
+      text-align: center;
+      right: 0;
+    }
+    .aside .top-aside input {
+      padding: 5px;
+      width: 90%;
+      height: 30px;
+      border-radius: 5px;
+    }
+    .aside .top-aside input::placeholder {
+      font-style: italic;
+      font-weight: bold;
+    }
+    .aside .top-aside i {
+      position: absolute;
+      right: 25px;
+      font-size: 19px;
+      top: 5px;
+    }
+    .aside .right-aside img {
+      width: 100px;
+      padding: 10px 0;
+    }
+    .aside .min-aside {
+      background-color: #fff;
+      overflow: hidden;
+      height: 300px;
+    }
+    .aside .min-aside h2 {
+      background-color: rgb(27, 172, 27);
+      padding: 8px;
+      font-size: 17px;
+      color: #fff;
+      font-family: 100;
+      position: absolute;
+      right: 0;
+      left: 0;
+      border: 1px solid #f2f2f2;
+      z-index: 3;
+    }
+    .aside .min-aside .min-asidedata {
+      animation: ani2 60s linear infinite;
+    }
+    @keyframes ani2 {
+      0% {
+        transform: translateY(30%);
+      }
+      100% {
+        transform: translateY(-250%);
+      }
+    }
+    .aside .min-aside .min-asidedata .data {
+      text-align: center;
+      background: none repeat scroll 0 0 #ecfafc;
+      color: #333333;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 20px;
+      padding: 10px;
+    }
+    .aside .min-aside .min-asidedata .data-one .max,
+    .aside .min-aside .min-asidedata .data-one .min {
+      font-style: italic;
+      font-weight: bold;
+      text-decoration: underline;
+      text-align: left;
+      padding-left: 10px;
+    }
+    .aside .min-aside .min-asidedata .sub-aside p {
+      text-align: left;
+      padding-left: 20px;
+      min-height: 20px;
+      padding-bottom: 5px;
+    }
+    .aside .bottom-aside {
+      display: inline-block;
+      text-align: left;
+      padding: 10px 0px 5px;
+    }
+    .aside .bottom-aside img {
+      border-radius: 50%;
+      position: absolute;
+      left: 20px;
+    }
+    .aside .bottom-aside .image1 {
+      bottom: 260px;
+    }
+    .aside .bottom-aside .image2 {
+      bottom: 180px;
+    }
+    .aside .bottom-aside .image3 {
+      bottom: 100px;
+    }
+    .aside .bottom-aside .image4 {
+      bottom: 20px;
+    }
+    .aside .bottom-aside button {
+      margin: 10px 0;
+      font-size: 20px;
+      border-radius: 10px;
+      border: 1px solid #f2f2f2;
+      height: 60px;
+      width: 385px;
+      padding-left: 30%;
+      text-align: justify;
+      text-transform: uppercase;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .aside .bottom-aside .bottom-one button a {
+      color: #900;
+    }
+    .aside .bottom-aside .bottom-one button {
+      background-color: #46ce31;
+    }
+    .aside .bottom-aside .bottom-two button a {
+      color: #333;
+    }
+    .aside .bottom-aside .bottom-two button {
+      background-color: yellow;
+    }
+    .aside .bottom-aside .bottom-four button a,
+    .aside .bottom-aside .bottom-three button a {
+      color: #fff;
+    }
+    .aside .bottom-aside .bottom-three button {
+      background-color: orangered;
+    }
+    .aside .bottom-aside .bottom-four button {
+      background-color: #0399f0;
+    }
+    a {
+      text-decoration: none;
+      color: #000;
+    }
+    .fb-comments {
+      position: absolute;
+      bottom: 0;
+    }
+    .footer {
+      padding: 20px;
+      top: 1500px;
+      display: FLEX;
+      text-align: left;
+      line-height: 20px;
+      background-color: #2ce90f;
+      position: RELATIVE;
+      font-weight: bold;
+    }
+    .footer h3 {
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+    .footer .top-footer {
+      padding-right: 100px;
+    }
+    .footer .right-footer {
+      padding-right: 100px;
+    }
+  </style>
+  <body>
+    <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=1812964512407266&autoLogAppEvents=1"
+      nonce="qM50iiur"
+    ></script>
+    <script src="https://uhchat.net/code.php?f=d7d06d"></script>
+    <div class="container">
+      <div class="clear"></div>
+      <div class="header">
+        <img
+          class="image1"
+          src="https://tse2.mm.bing.net/th?id=OIP.wO77AN-eZS4RqYnIlTxpdwHaEy&pid=Api&P=0&w=300&h=300"
+        />
+        <div class="text-header">
+          <div class="one">
+            "Bản thân nhà giáo dục cũng cần phải được giáo dục"
+          </div>
+          <img
+            class="image2"
+            src="https://bizweb.dktcdn.net/thumb/large/100/343/398/products/logo-7cdf049a-6c1b-4687-a91c-d694e549b0dc.png?v=1572746902240"
+          />
+          <div class="min-header">trường thpt<br /><span>tố hữu</span></div>
+        </div>
+        <div class="sub-header">
+          <form>
+            <div class="top">đăng nhập tài khoảng</div>
+            <div class="right">
+              <div class="bottom">Tài khoảng:</div>
+              <input type="text" placeholder="Uses...." />
+              <div class="text bottom">Mật khẩu:</div>
+              <input type="text" placeholder="Password...." />
+              <button>Đăng nhập</button>
+            </div>
+            <div class="left">Quên mật khẩu ?</div>
+            <div class="left">Đăng ký tài khoảng</div>
+          </form>
+        </div>
+      </div>
+      <div class="nav">
+        <ul class="text-nav">
+          <li><a href="">Trang chủ</a></li>
+          <li><a href="">Giới thiệu</a></li>
+          <li class="top">
+            <a href="">Lịch học</a>
+            <ul class="sub-nav">
+              <li><a href="">Buổi sáng</a></li>
+              <li><a href="">Buổi chiều</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">Chương trình học</a>
+            <ul class="sub-nav">
+              <li><a href="">Khối tự nhiên</a></li>
+              <li><a href="">Khối xã hội</a></li>
+              <li><a href="">Tiếng anh</a></li>
+            </ul>
+          </li>
+          <li><a href="">Chương trình học sinh</a></li>
+          <li><a href="">Các thông báo nhà trường</a></li>
+          <li><a href="">Liên hệ</a></li>
+          <li><a href="">Góp ý</a></li>
+          <li><a href="">Hỏi & đáp</a></li>
+        </ul>
+      </div>
+      <div class="article">
+        <div class="sub-article">
+          <h1>TKB dạy và học môn GDQP từ tuần học thứ 2</h1>
+          <div class="top">
+            <img
+              src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-8/tai-xuong.jpg"
+            />
+            <p><a href="">xem thêm</a></p>
+          </div>
+          <br />
+          <hr />
+          <br />
+          <div class="max-article">
+            <div class="right">
+              <img
+                src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-9/z3714982698091-cc76e32a680cde215f54a8af51ebecf9.jpg"
+                width="300px"
+                height="100px"
+              />
+              <p>Danh sách Học sinh khối 11 học nghề phổ...</p>
+            </div>
+            <div class="right">
+              <img
+                src="https://tse3.mm.bing.net/th?id=OIP.cYs3BhDbWiMm46A8yldB7QHaFQ&pid=Api&P=0&w=300&h=300"
+                width="300px"
+                height="100px"
+              />
+              <p>TKB dạy và học HKI năm học 2022-2023</p>
+            </div>
+            <div class="right">
+              <img
+                src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-8/tai-xuong.jpg"
+                width="300px"
+                height="100px"
+              />
+              <p>Thông báo tập trung học sinh đầu năm học...</p>
+            </div>
+            <div class="right">
+              <img
+                src="https://img.loigiaihay.com/picture/article/2019/0427/tu-ay-to-huu-0.jpg"
+                width="300px"
+                height="100px"
+              />
+              <p>Những bài văn hay của nhà văn Tố Hữu</p>
+            </div>
+          </div>
+          <hr />
+          <br />
+          <div class="min-article">
+            <p>
+              <i class="fa fa-arrow-right"></i>
+              KẾ HOẠCH (V/v tổ chức bồi dưỡng chính trị đầu năm học cho cán bộ
+              quản lý, giáo viên, nhân viên và hoạt động sinh hoạt chính trị,
+              học tập quán triệt nội quy, quy chế đầu cho học sinh năm học
+              2022-2023)
+            </p>
+            <p>
+              <i class="fa fa-arrow-right"></i>
+              THÔNG BÁO điều chỉnh ngày tổ chức thi lại, xét lên lớp năm học
+              2021 - 2022
+            </p>
+            <p>
+              <i class="fa fa-arrow-right"></i>
+              KẾ HOẠCH Về việc tổ chức ôn tập, thi lại, xét lên lớp năm học 2021
+              - 2022
+            </p>
+          </div>
+        </div>
+        <div class="text-article">
+          <div class="top">
+            <h2>công khai các điều kiện đảm bảo chất lượng</h2>
+          </div>
+          <div class="bottom">
+            <div class="right">
+              <label>Chọn năm học để xem:</label>
+              <select>
+                <option>2018-2019</option>
+                <option>2019-2020</option>
+                <option>2020-2021</option>
+                <option>2021-2022</option>
+                <option>2022-2023</option>
+                <option>2023-2024</option>
+                <option>2024-2025</option>
+              </select>
+            </div>
+            <ul>
+              <li>
+                <a href=""
+                  ><span>1</span>Báo cáo cam kết chất lượng giáo dục của TRƯỜNG
+                  HỌC PHỔ THÔNG TỐ HỮU</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  ><span>2</span>Thông tin chất lượng giáo dục thực tế của
+                  TRƯỜNG HỌC PHỔ THÔNG TỐ HỮU</a
+                >
+              </li>
+              <li>
+                <a href="">
+                  <span>3</span>Thông tin cơ sở vật chất của TRƯỜNG HỌC PHỔ
+                  THÔNG TỐ HỮU</a
+                >
+              </li>
+              <li>
+                <a href="">
+                  <span>4</span>Thông tin về đội ngũ nhà giáo, cán bộ quản lý và
+                  nhân viên của TRƯỜNG HỌC PHỔ THÔNG TỐ HỮU</a
+                >
+                <br />
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="aside">
+        <div class="top-aside">
+          <input type="text" placeholder="Tìm kiếm..." /><i
+            class="fa fa-search"
+          ></i>
+        </div>
+        <div class="right-aside">
+          <a
+            target="_blank"
+            href="https://mail.google.com/mail/u/0/?tab=mm#inbox"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2016/01/26/17/15/gmail-1162901__480.png"
+              height="100px"
+              width="200px"
+            />
+          </a>
+        </div>
+        <section>
+          <div class="min-aside">
+            <h2 onclick="">Lịch công tác tuần</h2>
+            <div class="min-asidedata">
+              <div class="data-one">
+                <div class="data">Thứ hai, 16/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>
+                    - Dạy và học bình thường theo TKB học kỳ 2( Áp dụng từ ngày
+                    16/01/2023).
+                  </p>
+                  <p>- Các lớp khối sáng tiến hành sơ kết lớp ( Tiết 1).</p>
+                  <p>
+                    - Tiếp tục quyên góp ủng học quỹ trao học bổng cho học sinh
+                    có hoàn cảnh khó khăn dịp Tết Nguyên đán Qúy Mão 2023.
+                  </p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>
+                    - Dạy và học bình thường theo TKB học kỳ 2( Áp dụng từ ngày
+                    16/01/2023).
+                  </p>
+                  <p>- Các lớp khối sáng tiến hành sơ kết lớp ( Tiết 1).</p>
+                  <p>
+                    - Tiếp tục quyên góp ủng học quỹ trao học bổng cho học sinh
+                    có hoàn cảnh khó khăn dịp Tết Nguyên đán Qúy Mão 2023.
+                  </p>
+                  <p>
+                    - Sơ kết Tổ chuyên môn, tổ Văn phòng ( Từ tiết 3).- Tiếp tục
+                    quyên góp ủng học quỹ trao học bổng cho học sinh có hoàn
+                    cảnh khó khăn dịp Tết Nguyên đán Qúy Mão 2023.
+                  </p>
+                </div>
+              </div>
+              <div class="data-two">
+                <div class="data">Thứ ba, 17/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>
+                    - Sơ kết học kỳ 1 toàn trường. Trao học bổng cho học sinh.
+                    Xổ số vui xuân.
+                  </p>
+                  <p>- Họp cơ quan ( 09h00).</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>
+                    - Kiểm tra tình hình cơ sở vật chất trước khi nghỉ Tết
+                    Nguyên đán Kỷ Mão.
+                  </p>
+                  <p>- Học sinh lao động vệ sinh trường lớp.</p>
+                </div>
+              </div>
+              <div class="data-three">
+                <div class="data">Thứ tư, 18/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <strong>
+                    - NGHỈ TẾT NGUYÊN ĐÁN QUÝ MÃO 2023 ( Từ 18/01/2023 đến
+                    26/01/2023).
+                  </strong>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <div class="data-four">
+                <div class="data">Thứ năm, 19/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <div class="data-five">
+                <div class="data">Thứ sáu, 20/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <div class="data-six">
+                <div class="data">Thứ bảy, 21/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <div class="data-seven">
+                <div class="datta">Chủ nhật, 22/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-aside">
+          <div class="bottom-one">
+            <button>
+              <a href="">
+                <img
+                  class="image1"
+                  src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-anxious-person-thinking-confused-flat-illustration-png-image_6728196.jpg"
+                  width="50PX"
+                  height="50PX"
+                />
+                kế hoạch</a
+              >
+            </button>
+          </div>
+          <div class="bottom-two">
+            <button>
+              <a href="">
+                <img
+                  class="image2"
+                  src="https://tse1.mm.bing.net/th?id=OIP.wSJCqHgIMWIxJgH5uP5DKgHaEO&pid=Api&P=0&w=300&h=300"
+                  width="50PX"
+                  height="50PX"
+                />
+                lịch công tác</a
+              >
+            </button>
+          </div>
+          <div class="bottom-three">
+            <button>
+              <a href="">
+                <img
+                  class="image3"
+                  src="https://vlaw.vn/uploads/albums/2017_01/1484705660_933603732895949.jpg"
+                  width="50PX"
+                  height="50PX"
+                />
+                văn bản pháp luật</a
+              >
+            </button>
+          </div>
+          <div class="bottom-four">
+            <button>
+              <a href="">
+                <img
+                  class="image4"
+                  src="https://cms.luatvietnam.vn/uploaded/Images/Original/2019/02/28/thu-tuc-hanh-chinh_2802135133.jpg"
+                  width="50PX"
+                  height="50PX"
+                />
+                thủ tục hành chính</a
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="footer">
+        <div class="top-footer">
+          <h3>email</h3>
+          <p>tadi_timem101292@yahoo.com</p>
+          <p>huynhnam951753@gmail.com</p>
+        </div>
+        <div class="right-footer">
+          <h3>địa chỉ</h3>
+          <p>thpt-thuu.thuathienhue.edu.vn</p>
+          <p>xã Quảng Công, huyện Quảng Điền, Hue, Vietnam</p>
+        </div>
+        <div class="bottom-footer">
+          <h3>trường thpt tố hữu</h3>
+          <p>Bản quyền thuộc TRƯỜNG TRUNG HỌC PHỔ THÔNG TỐ HỮU</p>
+          <p>Chịu trách nhiệm nội dung: Hoàng Đình Thông - Hiệu trưởng</p>
+        </div>
+      </div>
+    </div>
+    <div
+      class="fb-comments"
+      data-href="http://127.0.0.1:5500/We18311/DEMO/Assignment.html"
+      data-width="200PX"
+      data-numposts="5"
+    ></div>
+  </body>
+</html>
