@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+    .text-nav > li {
+      display: inline-block;
+    }
+    .container .nav {
+      display: flex;
+      height: 50px;
+      background-color: #000;
+      right: 0;
+      left: 0;
+      top: 0;
+      box-shadow: 0 0 10px #000;
+      text-transform: uppercase;
+    }
+    .container .nav ul {
+      list-style-type: none;
+    }
+    .container .nav .text-nav a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      padding: 16px;
+    }
+    .container .nav .text-nav a:hover {
+      text-decoration: none;
+      color: rgb(225, 14, 14);
+      display: flex;
+      padding: 16px;
+      background-color: #333;
+    }
+    .container .nav .text-nav .sub-nav {
+      position: absolute;
+      display: none;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .container .nav .text-nav li a:focus,
+    .container .nav .text-nav li .sub-nav a:focus {
+      background-color: aqua;
+      color: green;
+    }
+    .container .nav .text-nav .sub-nav a {
+      display: flex;
+      font-weight: 300;
+      border-bottom: 1px solid #7e7e7e;
+      color: #000;
+      min-width: 150px;
+      padding: 10px 20px;
+    }
+    .container .nav .text-nav .sub-nav a:hover {
+      color: #fff;
+      background-color: #000;
+      font-weight: bold;
+    }
+    .container .nav .text-nav li:hover .sub-nav {
+      display: block;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="nav">
+        <ul class="text-nav">
+          <li>
+            <a href="">việt nam</a>
+            <ul class="sub-nav">
+              <li><a href="">aff cup</a></li>
+              <li><a href="">đtqg</a></li>
+              <li><a href="">world cup</a></li>
+            </ul>
+          </li>
+          <li><a href="">anh</a></li>
+          <li><a href="">tây ban nha</a></li>
+          <li><a href="">đức</a></li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

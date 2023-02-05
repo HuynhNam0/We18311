@@ -1,0 +1,115 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body,
+html {
+  color: #28262c;
+  font-family: "Muli", Arial, Helvetica, sans-serif;
+  font-size: 100%;
+  overflow-x: hidden;
+  line-height: 1.2;
+  height: 100%;
+  width: 100%;
+}
+.container {
+  position: relative;
+}
+.header {
+  position: fixed;
+  display: flex;
+  height: 30px;
+  background-color: #000;
+  top: 0;
+  right: 0;
+  left: 0;
+  box-shadow: 2px 2px 10px #000;
+  align-items: center;
+  padding-left: 100px;
+}
+.header .min-header li {
+  display: inline-block;
+}
+.header .min-header li a {
+  color: #fff;
+  font-size: 13px;
+  text-decoration: none;
+  padding: 0 5px;
+  display: flex;
+  border-right: 1px solid rgb(86, 83, 83);
+}
+.header .min-header li a:hover {
+  color: red;
+}
+.header .min-header span {
+  border: none;
+}
+.header .time,
+.header .day {
+  color: #fff;
+  font-size: 13px;
+}
+.nav {
+  position: fixed;
+  display: flex;
+  height: 100px;
+  background-color: #fff;
+  top: 30px;
+  right: 0;
+  left: 0;
+  box-shadow: 2px 2px 10px #000;
+  align-items: center;
+}
+.nav .text-nav {
+  position: fixed;
+  display: flex;
+  height: 40px;
+  background-color: red;
+  right: 0;
+  top: 90px;
+  box-shadow: 2px 2px 10px #000;
+  text-transform: uppercase;
+  align-items: center;
+}
+.nav .text-nav .max-nav li {
+  display: inline-block;
+}
+.container .nav .max-nav a {
+  text-decoration: none;
+  color: #fff;
+  display: flex;
+  padding: 10px;
+}
+.container .nav .max-nav a:hover {
+  text-decoration: none;
+  color: rgb(225, 14, 14);
+  display: flex;
+  padding: 10px;
+  background-color: #333;
+}
+.container .nav .max-nav .min-nav {
+  position: absolute;
+  display: none;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.container .nav .max-nav .min-nav li {
+  display: block;
+}
+.container .nav .max-nav .min-nav a {
+  display: flex;
+  font-weight: 300;
+  border-bottom: 1px solid #7e7e7e;
+  color: #000;
+  min-width: 200px;
+  padding: 9px 20px;
+}
+.container .nav .max-nav .min-nav a:hover {
+  color: #fff;
+  background-color: #000;
+  font-weight: bold;
+}
+.container .nav .max-nav li:hover .min-nav {
+  display: block;
+}
