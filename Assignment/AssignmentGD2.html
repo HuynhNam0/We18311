@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+     <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="text.css" />
+  </head>
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+      text-decoration: none;
+      list-style-type: none;
+    }
+    :root {
+      --red-color: #ff0000;
+      --orange-color: #ff7300;
+      --yellow-color: #fffb00;
+      --green-color: #48ff00;
+      --aqua-color: #00ffd5;
+      --blue-color: #002bff;
+    }
+    body,
+    html {
+      height: 100%;
+      min-height: 250vh;
+      font-family: Arial, Helvetica, sans-serif;
+      background-image: linear-gradient(to bottom, #097934, rgb(212, 243, 100));
+      background-repeat: no-repeat;
+      background-position: bottom;
+      background-size: cover;
+    }
+    .clear {
+      clear: both;
+    }
+    /*grid respotion*/
+    .header {
+      grid-area: header;
+    }
+    .nav {
+      grid-area: nav;
+    }
+    .list {
+      grid-area: list;
+    }
+    .article {
+      grid-area: article;
+    }
+    .aside {
+      grid-area: aside;
+    }
+    .footer {
+      grid-area: footer;
+    }
+    .conment {
+      grid-area: conment;
+      text-align: center;
+      border-top: 1px solid #fff;
+    }
+    .container {
+      position: relative;
+      display: grid;
+      height: 100vh;
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: 200px 50px 50px 1fr 170% 250px 100px;
+      grid-template-areas:
+        "header header header"
+        "nav nav nav"
+        "list list list"
+        "article article aside"
+        "article article aside"
+        "conment conment conment"
+        "footer footer footer";
+      gap: 5px;
+    }
+    /*header*/
+    .text-header {
+      /*color*/
+      background-color: var(--green-color);
+      /*flexbox*/
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      position:fixed;
+      left:0;
+      right:0;
+      top:0;
+      z-index: 1;
+    }
+    .text-header .image-item img {
+      border-radius: 5px;
+      height: 150px;
+      margin: 30px;
+      width: 300px;
+    }
+    .sub-header .text p {
+      /*font*/
+      font-size: 17px;
+      font-style: italic;
+
+      animation: ani1 5s linear infinite;
+      padding: 0 0 10px 10px;
+    }
+    @keyframes ani1 {
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+        text-decoration: underline;
+      }
+    }
+    .sub-header .image {
+      /*color*/
+      color: var(--blue-color);
+      /*text*/
+      text-align: center;
+      text-shadow: 2px 1px 1px #fff;
+      text-transform: uppercase;
+
+      padding-bottom: 15px;
+      font-weight: bold;
+    }
+    .sub-header .image p {
+      font-size: 18px;
+      padding: 5px 0;
+    }
+    .sub-header .image span {
+      font-size: 25px;
+    }
+    .sub-header img {
+      height: 100px;
+      border-radius: 50%;
+    }
+    form {
+      border: 1px solid #fff;
+      margin: auto 10px;
+      padding: 10px;
+      width: 30%;
+      /*font*/
+      font-size: 15px;
+      /*color*/
+      color: #fff;
+    }
+    form .top {
+      text-transform: uppercase;
+      font-size: 20px;
+    }
+    form .bottom,
+    form .right {
+      padding: 5px 0;
+    }
+    form .right input {
+      width: 80%;
+      padding: 5px;
+    }
+    form .left {
+      display: inline-block;
+      padding: 10px;
+    }
+    form button {
+      padding: 5px;
+    }
+    form .left:hover {
+      text-decoration: underline;
+    }
+    .checkbox {
+      display:none;
+      color:#fff;
+    }
+    #check {
+      display:none;
+    }
+    .checkbtn {
+      font-size: 30px;
+      line-height: 50px;
+      /*orther*/
+      cursor: pointer;
+    }
+    .text-nav .label {
+      color:#fff;
+      display:inline-block;
+    }
+    .text-nav > li {
+      display: inline-block;
+    }
+
+    .nav {
+      background-color: var(--blue-color);
+      box-shadow: 0 0 10px #000;
+      /*fixed*/
+      position:fixed;
+      display:flex;
+      top:210px;
+      left:0;
+      right:0;
+      z-index: 1;
+    }
+    .nav .text-nav {
+      list-style-type: none;
+    }
+    .nav .text-nav a {
+      text-decoration: none;
+      color: #fff;
+      display: flex;
+      padding: 16px;
+    }
+    .nav .text-nav a:hover {
+      text-decoration: none;
+      color: rgb(225, 14, 14);
+      display: flex;
+      padding: 16px;
+      background-color: #333;
+    }
+    .nav .text-nav .sub-nav {
+      position: absolute;
+      display: none;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+    .nav .text-nav .sub-nav a {
+      display: flex;
+      font-weight: 300;
+      color: #000;
+      border-bottom: 1px solid #7e7e7e;
+      padding-inline: unset;
+      min-width: 150px;
+      padding: 10px 20px;
+    }
+    .nav .text-nav .sub-nav a:hover {
+      color: #fff;
+      background-color: #000;
+      font-weight: bold;
+    }
+
+    .nav .text-nav li:hover .sub-nav {
+      display: block;
+    }
+    @media (min-width: 1200px) {
+      .nav .text-nav a {
+        font-size: 14px;
+      }
+    }
+    @media (max-width: 750px) {
+      .checkbtn {
+        display:block;
+        margin-left: 20px;
+      }
+      .checkbox {
+         display:flex;
+      }
+      .nav .text-nav {
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        top:260px;
+        left:0;
+        background-color: var(--aqua-color);
+      }
+      .nav .text-nav li {
+        display:flex;
+        justify-content: center;
+      }
+      .nav .text-nav li a {
+        font-size:25px;
+      }
+      .nav .text-nav a:hover {
+         color:var(--red-color);
+         background:none;
+      }
+      .nav .text-nav li:hover .sub-nav {
+      display: none;
+    }
+    }
+    /*list*/
+    .list {
+      display:grid;
+      grid-template-columns: repeat(3,1fr);
+      padding:15px;
+      grid-template-areas: 
+      "animation animation animation"
+      ;
+      background-color:rgba(255,255,255,.8);
+      border-bottom:1px dashed #7e7e7e;
+      margin:auto 0;
+    }
+    .list .animation {
+      text-transform: uppercase;
+      color:var(--red-color);
+      font-family:"HongHaHep", sans-serif;
+      font-weight: bold;
+      font-size: 20px;
+      grid-area: animation;
+      animation: ani3 50s linear infinite;
+    }
+    @keyframes ani3 {
+      0% {
+        transform: translateX(100%);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+    /*article*/
+    .article {
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+    }
+    .article .sub-article {
+      border: 1px solid #f2f2f2;
+      margin: 5px 10px;
+      background-color: rgba(255, 255, 255, 0.6);
+    }
+    .article h1 {
+      font-size: 20px;
+      padding: 10px;
+    }
+    .article .top img {
+      width: 400px;
+      height: 200px;
+      display: flex;
+
+      border-radius: 10px;
+      border: 1px solid #000;
+      margin-left: 10px;
+    }
+    .text-article .bottom a:hover,
+    .article .max-article p:hover,
+    .article .top a:hover {
+      color: red;
+    }
+    .article .top {
+      display:flex;
+    }
+    .article .top .wrap {
+      display:flex;
+      overflow:scroll;
+      width:320px;
+      margin:auto;
+    }
+    .article .top .link {
+      margin:auto;
+      background-color: rgba(0,0,0,.2);
+      padding:5px;
+    }
+    .article .max-article {
+      display: flex;
+      padding: 10px 10px;
+      text-align: center;
+    }
+    .article .max-article p {
+      padding: 5px 5px;
+      color: blue;
+    }
+    .article .right img {
+      width: 87%;
+      border-radius: 5px;
+      border: 1px solid #000;
+    }
+    .article .min-article {
+      padding: 0 20px;
+      color: blue;
+    }
+    .article .min-article p {
+      padding: 5px 0;
+    }
+    .text-article {
+      padding-top: 10px;
+    }
+    .text-article .top {
+      text-align: left;
+      text-transform: uppercase;
+      color: rgb(225, 14, 14);
+      background-color: #333;
+      font-size: 17px;
+      opacity: 0.6;
+
+      padding: 10px 0 10px 30px;
+      margin: 5px 10px 0 10px;
+    }
+    .text-article .bottom {
+      border: 1px solid #f2f2f2;
+      background-color: rgba(255, 255, 255, 0.6);
+      margin: 0 10px;
+    }
+    .text-article .bottom .right {
+      background: #f4f4f4;
+       font-size: 17px;
+      display: flex;
+      padding: 15px 5px 15px 10px;
+      margin: 10px 10px 30px;
+    }
+    .text-article .bottom label {
+      cursor: auto;
+      padding-right: 10px;
+    }
+    .text-article .bottom select {
+      display: flex;
+      padding: 5px 10px;
+      margin-top: -4px;
+    }
+    .text-article .bottom li {
+      list-style-type: none;
+    }
+    .text-article .bottom a {
+      text-decoration: none;
+      text-align: justify;
+      display: block;
+      padding: 10px 0 20px 0;
+      border-bottom: 1px solid #7e7e7e;
+      color: #000;
+    }
+    .text-article .bottom ul {
+      padding: 0 20px 0 30px;
+    }
+    .text-article .bottom span {
+      font-size: 18px;
+      font-weight: bold;
+      font-family: fantasy;
+      padding-right: 15px;
+      color: #0399f0;
+    }
+    .aside {
+      font-family: Arial, Helvetica, sans-serif;
+      cursor: pointer;
+      margin: 5px;
+      text-align: center;
+    }
+    .aside .top-aside input {
+      width: 90%;
+      height: 30px;
+      border-radius: 5px;
+      padding: 5px;
+    }
+    .aside .top-aside input::placeholder {
+      font-style: italic;
+      font-weight: bold;
+    }
+    .aside .top-aside i {
+      right: 25px;
+      font-size: 19px;
+      top: 5px;
+    }
+    .aside .right-aside img {
+      width: 100px;
+      padding: 10px 0;
+    }
+    .aside .min-aside {
+      background-color: #fff;
+      overflow: hidden;
+      height: 300px;
+    }
+    .aside h2 {
+      /*color*/
+      background-color: var(--yellow-color);
+      color:var(--blue-color);
+      padding:8px;
+      border: 1px solid #7e7e7e;
+    }
+    .aside .min-aside .min-asidedata {
+      animation: ani2 60s linear infinite;
+    }
+    @keyframes ani2 {
+      0% {
+        transform: translateY(30%);
+      }
+      100% {
+        transform: translateY(-250%);
+      }
+    }
+    .aside .min-aside .min-asidedata .data {
+      text-align: center;
+      background: none repeat scroll 0 0 #ecfafc;
+      color: #333333;
+
+      font-size: 18px;
+      font-weight: bold;
+
+      margin: 10px 20px;
+      padding: 10px;
+    }
+    .aside .min-aside .min-asidedata .data-one .max,
+    .aside .min-aside .min-asidedata .data-one .min {
+      font-style: italic;
+      font-weight: bold;
+
+      text-decoration: underline;
+      text-align: left;
+      padding-left: 10px;
+    }
+    .aside .min-aside .min-asidedata .sub-aside p {
+      text-align: left;
+       min-height: 20px;
+
+      padding-left: 20px;
+      padding-bottom: 5px;
+    }
+    .aside .bottom-aside {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 0px 5px;
+    }
+    .aside .bottom-aside .image {
+      display:flex;
+      flex-direction: row;
+      justify-content:flex-start;
+    }
+     .aside .bottom-aside img {
+      border-radius: 50%;
+      margin:5px;
+     }
+      .aside .bottom-aside .wapper {
+        float:left;
+        margin-left:30%;
+        margin-top:-11%;
+      }
+    .aside .bottom-aside button {
+      margin: 10px 0;
+      border-radius: 10px;
+      border: 1px solid #f2f2f2;
+      height: 60px;
+      width: 385px;
+      
+      text-transform: uppercase;
+
+      font-size: 20px;
+      font-family: "Times New Roman", Times, serif;
+    }
+    .aside .bottom-aside .bottom-one button a {
+      color: #900;
+    }
+    .aside .bottom-aside .bottom-one button {
+      background-color: #46ce31;
+    }
+    .aside .bottom-aside .bottom-two button a {
+      color: #333;
+    }
+    .aside .bottom-aside .bottom-two button {
+      background-color: yellow;
+    }
+    .aside .bottom-aside .bottom-four button a,
+    .aside .bottom-aside .bottom-three button a {
+      color: #fff;
+    }
+    .aside .bottom-aside .bottom-three button {
+      background-color: orangered;
+    }
+    .aside .bottom-aside .bottom-four button {
+      background-color: #0399f0;
+    }
+
+     .footer {
+      padding: 20px;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      line-height: 20px;
+      background-color: #2ce90f;
+      font-weight: bold;
+    }
+    .footer h3 {
+      text-transform: uppercase;
+      font-size: 20px;
+      padding-bottom: 10px;
+    }
+    .footer .top-footer {
+      padding-right: 100px;
+    }
+    .footer .right-footer {
+      padding-right: 100px;
+    }
+  </style>
+  <body>
+     <div id="fb-root"></div>
+    <script
+      async
+      defer
+      crossorigin="anonymous"
+      src="https://connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v15.0&appId=1604042063383809&autoLogAppEvents=1"
+      nonce="Z0JIcNPt"
+    ></script>
+    <script src="https://uhchat.net/code.php?f=d7d06d"></script>
+    <div class="container">
+      <div class="clear"></div>
+      <!--header-->
+      <div class="header">
+        <div class="text-header">
+          <div class="sub-header">
+
+            <div class="text">
+              <p>"Bản thân nhà giáo dục cũng cần được giáo dục"</p>
+            </div>
+            <div class="image">
+              <img
+                src="https://tse2.mm.bing.net/th?id=OIP.oE6tzTL1X3dTpLMSJQ8kVgAAAA&pid=Api&P=0"
+                alt=""
+              />
+              <p>Trường thpt</p>
+              <span>Tố hữu</span>
+            </div>
+          </div>
+
+          <div class="image-item">
+            <img
+              src="https://tse2.mm.bing.net/th?id=OIP.wO77AN-eZS4RqYnIlTxpdwHaEy&pid=Api&P=0&w=300&h=300"
+              alt=""
+            />
+          </div>
+          <!--form-->
+          <form>
+            <div class="top">Đăng nhập tài khoảng</div>
+            <div class="right">
+              <div class="bottom">Tài khoảng:</div>
+              <input type="text" name="text" placeholder="User..." />
+              <div class="bottom">Mật khẩu:</div>
+              <input type="text" name="text" planceholder="Password..." />
+            </div>
+            <button>Đăng nhập</button>
+            <div class="left">Quên mật khẩu?</div>
+            <div class="left">Đăng ký tài khoảng</div>
+          </form>
+
+        </div>
+      </div>
+      <!--nav-->
+      <div class="nav">
+        <ul class="text-nav">
+          <li><a href="">Trang chủ</a></li>
+          <li><a href="">Giới thiệu</a></li>
+          <li class="top">
+            <a href="">Lịch học</a>
+            <ul class="sub-nav">
+              <li><a href="">Buổi sáng</a></li>
+              <li><a href="">Buổi chiều</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="">Chương trình học</a>
+            <ul class="sub-nav">
+              <li><a href="">Khối tự nhiên</a></li>
+              <li><a href="">Khối xã hội</a></li>
+              <li><a href="">Tiếng anh</a></li>
+            </ul>
+          </li>
+          <li><a href="">Chương trình học sinh</a></li>
+          <li><a href="">Các thông báo nhà trường</a></li>
+          <li><a href="">Liên hệ</a></li>
+          <li><a href="">Góp ý</a></li>
+          <li><a href="">Hỏi & đáp</a></li>
+        </ul>
+        <div class="checkbox">
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+           <i class="fa fa-bars"></i>
+        </label>
+        </div>
+      </div>
+      <!--list-->
+      <div class="list">
+         <div class="animation">Rẻ của sự học tập thì đăng, quá của sự học tập thì ngọt</div>
+      </div>
+      <!--article-->
+      <div class="article">
+        <div class="sub-article">
+          <h1>TKB dạy và học môn GDQP từ tuần học thứ 2</h1>
+
+          <div class="top">
+            <div class="wrap">
+            <img
+              src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-9/z3714982698091-cc76e32a680cde215f54a8af51ebecf9.jpg"
+            />
+              <img
+              src="https://tse3.mm.bing.net/th?id=OIP.cYs3BhDbWiMm46A8yldB7QHaFQ&pid=Api&P=0&w=300&h=300"
+            />
+              <img
+              src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-8/tai-xuong.jpg"
+            />
+              <img
+              src="https://img.loigiaihay.com/picture/article/2019/0427/tu-ay-to-huu-0.jpg"
+            />
+            </div>
+            <div class="link">
+            <p><a href="">xem thêm</a></p>
+            </div>
+          </div>
+
+          <br />
+          <hr />
+          <br />
+          <!--max-article-->
+          <div class="max-article">
+            <div class="right">
+              <img
+                src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-9/z3714982698091-cc76e32a680cde215f54a8af51ebecf9.jpg"
+                width="300px"
+                height="100px"
+              />
+              <p>Danh sách Học sinh khối 11 học nghề phổ...</p>
+            </div>
+
+            <div class="right">
+              <img
+                src="https://tse3.mm.bing.net/th?id=OIP.cYs3BhDbWiMm46A8yldB7QHaFQ&pid=Api&P=0&w=300&h=300"
+                width="300px"
+                height="100px"
+              />
+              <p>TKB dạy và học HKI năm học 2022-2023</p>
+            </div>
+
+            <div class="right">
+              <img
+                src="http://thpt-thuu.thuathienhue.edu.vn/imgs/Thu_muc_he_thong/_Nam_2022/thang-8/tai-xuong.jpg"
+                width="300px"
+                height="100px"
+              />
+              <p>Thông báo tập trung học sinh đầu năm học...</p>
+            </div>
+
+            <div class="right">
+              <img
+                src="https://img.loigiaihay.com/picture/article/2019/0427/tu-ay-to-huu-0.jpg"
+                width="300px"
+                height="100px"
+              />
+              <p>Những bài văn hay của nhà văn Tố Hữu</p>
+            </div>
+
+          </div>
+          <hr />
+          <br />
+          <div class="min-article">
+            <p>
+              <i class="fa fa-arrow-right"></i>
+              KẾ HOẠCH (V/v tổ chức bồi dưỡng chính trị đầu năm học cho cán bộ
+              quản lý, giáo viên, nhân viên và hoạt động sinh hoạt chính trị,
+              học tập quán triệt nội quy, quy chế đầu cho học sinh năm học
+              2022-2023)
+            </p>
+            <p>
+              <i class="fa fa-arrow-right"></i>
+              THÔNG BÁO điều chỉnh ngày tổ chức thi lại, xét lên lớp năm học
+              2021 - 2022
+            </p>
+            <p>
+              <i class="fa fa-arrow-right"></i>
+              KẾ HOẠCH Về việc tổ chức ôn tập, thi lại, xét lên lớp năm học 2021
+              - 2022
+            </p>
+          </div>
+        </div>
+        <!--text-article-->
+        <div class="text-article">
+          <div class="top">
+            <h2>công khai các điều kiện đảm bảo chất lượng</h2>
+          </div>
+          <div class="bottom">
+            <div class="right">
+              <label>Chọn năm học để xem:</label>
+              <select>
+                <option>2018-2019</option>
+                <option>2019-2020</option>
+                <option>2020-2021</option>
+                <option>2021-2022</option>
+                <option>2022-2023</option>
+                <option>2023-2024</option>
+                <option>2024-2025</option>
+              </select>
+            </div>
+            <ul>
+              <li>
+                <a href=""
+                  ><span>1</span>Báo cáo cam kết chất lượng giáo dục của TRƯỜNG
+                  HỌC PHỔ THÔNG TỐ HỮU</a
+                >
+              </li>
+              <li>
+                <a href=""
+                  ><span>2</span>Thông tin chất lượng giáo dục thực tế của
+                  TRƯỜNG HỌC PHỔ THÔNG TỐ HỮU</a
+                >
+              </li>
+              <li>
+                <a href="">
+                  <span>3</span>Thông tin cơ sở vật chất của TRƯỜNG HỌC PHỔ
+                  THÔNG TỐ HỮU</a
+                >
+              </li>
+              <li>
+                <a href="">
+                  <span>4</span>Thông tin về đội ngũ nhà giáo, cán bộ quản lý và
+                  nhân viên của TRƯỜNG HỌC PHỔ THÔNG TỐ HỮU</a
+                >
+                <br />
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="left">
+           <br>
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/SsT-73_EhTQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="margin-left: 200px;"></iframe>
+      <br>
+        </div>
+      </div>
+      <!--aside-->
+      <div class="aside">
+        <div class="top-aside">
+          <input type="text" placeholder="Tìm kiếm..." /><i
+            class="fa fa-search"
+          ></i>
+        </div>
+        <div class="right-aside">
+          <a
+            target="_blank"
+            href="https://mail.google.com/mail/u/0/?tab=mm#inbox"
+          >
+            <img
+              src="https://cdn.pixabay.com/photo/2016/01/26/17/15/gmail-1162901__480.png"
+              height="100px"
+              width="200px"
+            />
+          </a>
+        </div>
+        <section>
+           <h2 onclick="">Lịch công tác tuần</h2>
+          <div class="min-aside">
+            <div class="min-asidedata">
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Thứ hai, 16/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>
+                    - Dạy và học bình thường theo TKB học kỳ 2( Áp dụng từ ngày
+                    16/01/2023).
+                  </p>
+                  <p>- Các lớp khối sáng tiến hành sơ kết lớp ( Tiết 1).</p>
+                  <p>
+                    - Tiếp tục quyên góp ủng học quỹ trao học bổng cho học sinh
+                    có hoàn cảnh khó khăn dịp Tết Nguyên đán Qúy Mão 2023.
+                  </p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>
+                    - Dạy và học bình thường theo TKB học kỳ 2( Áp dụng từ ngày
+                    16/01/2023).
+                  </p>
+                  <p>- Các lớp khối sáng tiến hành sơ kết lớp ( Tiết 1).</p>
+                  <p>
+                    - Tiếp tục quyên góp ủng học quỹ trao học bổng cho học sinh
+                    có hoàn cảnh khó khăn dịp Tết Nguyên đán Qúy Mão 2023.
+                  </p>
+                  <p>
+                    - Sơ kết Tổ chuyên môn, tổ Văn phòng ( Từ tiết 3).- Tiếp tục
+                    quyên góp ủng học quỹ trao học bổng cho học sinh có hoàn
+                    cảnh khó khăn dịp Tết Nguyên đán Qúy Mão 2023.
+                  </p>
+                </div>
+              </div>
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Thứ ba, 17/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>
+                    - Sơ kết học kỳ 1 toàn trường. Trao học bổng cho học sinh.
+                    Xổ số vui xuân.
+                  </p>
+                  <p>- Họp cơ quan ( 09h00).</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>
+                    - Kiểm tra tình hình cơ sở vật chất trước khi nghỉ Tết
+                    Nguyên đán Kỷ Mão.
+                  </p>
+                  <p>- Học sinh lao động vệ sinh trường lớp.</p>
+                </div>
+              </div>
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Thứ tư, 18/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <strong>
+                    - NGHỈ TẾT NGUYÊN ĐÁN QUÝ MÃO 2023 ( Từ 18/01/2023 đến
+                    26/01/2023).
+                  </strong>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Thứ năm, 19/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Thứ sáu, 20/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Thứ bảy, 21/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+              <!--data-one-->
+              <div class="data-one">
+                <div class="data">Chủ nhật, 22/01/2023</div>
+                <div class="sub-aside">
+                  <p class="min">Buổi sáng</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+                <div class="sub-aside">
+                  <p class="max">Buổi chiều</p>
+                  <p>- Trực cơ quan theo kế hoạch phân công của nhà trường.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="bottom-aside">
+          <div class="bottom-one">
+            <button>
+              <div class="image">
+               <img
+                  class="image1"
+                  src="https://png.pngtree.com/png-clipart/20210912/original/pngtree-anxious-person-thinking-confused-flat-illustration-png-image_6728196.jpg"
+                  width="50PX"
+                  height="50PX"
+                />
+                </div>
+                <div class="wapper">
+              <a href="">
+                kế hoạch</a
+              >
+              </div>
+            </button>
+          </div>
+          <div class="bottom-two">
+            <button>
+              <div class="image">
+               <img
+                  class="image2"
+                  src="https://tse1.mm.bing.net/th?id=OIP.wSJCqHgIMWIxJgH5uP5DKgHaEO&pid=Api&P=0&w=300&h=300"
+                  width="50PX"
+                  height="50PX"
+                />
+                </div>
+                <div class="wapper">
+              <a href="">
+                lịch công tác</a
+              >
+              </div>
+            </button>
+          </div>
+          <div class="bottom-three">
+            <button>
+              <div class="image">
+                <img
+                  src="https://vlaw.vn/uploads/albums/2017_01/1484705660_933603732895949.jpg"
+                  width="50PX"
+                  height="50PX"
+                />
+                </div>
+                <div class="wapper">
+              <a href="">
+                văn bản pháp luật</a
+              >
+              </div>
+            </button>
+          </div>
+          <div class="bottom-four">
+            <button>
+              <div class="image">
+               <img
+                  src="https://cms.luatvietnam.vn/uploaded/Images/Original/2019/02/28/thu-tuc-hanh-chinh_2802135133.jpg"
+                  width="50PX"
+                  height="50PX"
+                />
+                </div>
+                <div class="wapper">
+              <a href="">
+                thủ tục hành chính</a
+              >
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="conment">
+         <div
+        class="fb-like"
+        data-href="http://127.0.0.1:5500/We18311/Assginment/text.html"
+        data-width=""
+        data-layout="button_count"
+        data-action="like"
+        data-size="large"
+        data-share="true"
+      ></div>
+      <div
+        class="fb-comments"
+        data-href="http://127.0.0.1:5500/We18311/Assignment/text.html"
+        data-width=""
+        data-numposts="5"
+      ></div>
+      </div>
+      <!--footer-->
+      <div class="footer">
+         <div class="top-footer">
+          <h3>email</h3>
+          <p>tadi_timem101292@yahoo.com</p>
+          <p>huynhnam951753@gmail.com</p>
+        </div>
+        <div class="right-footer">
+          <h3>địa chỉ</h3>
+          <p>thpt-thuu.thuathienhue.edu.vn</p>
+          <p>xã Quảng Công, huyện Quảng Điền, Hue, Vietnam</p>
+        </div>
+        <div class="bottom-footer">
+          <h3>trường thpt tố hữu</h3>
+          <p>Bản quyền thuộc TRƯỜNG TRUNG HỌC PHỔ THÔNG TỐ HỮU</p>
+          <p>Chịu trách nhiệm nội dung: Hoàng Đình Thông - Hiệu trưởng</p>
+        </div>
+      </div>
+      </div>
+    </div>
+  </body>
+</html>
